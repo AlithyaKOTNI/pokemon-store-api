@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to Pokemon store
 
-Things you may want to cover:
+This rails application exposes a REST API to manange Pokemons.
 
-* Ruby version
+- Before starting the application , execute bin/rails db:migrate then db:seed to populate database from a csv file.
+- To test the application with postman, import the file 'Pokemon store.postman_collection.json' which's available at the root folder of the app into Postman,
+  this collection will help you to test all API exposed by the application.
+  
+- Before runing unit tests, execute rails db:migrate then db:seed RAILS_ENV=test , then run rspec.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Happy testing !!
