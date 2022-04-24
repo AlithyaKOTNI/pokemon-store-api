@@ -6,19 +6,18 @@ RSpec.describe 'Pokemons', type: :request do
       before do
         post '/api/v1/pokemons', params:
           { pokemon: {
-              "name": "PIKA PIKA",
-              "type_1": "ELECTRO",
-              "type_2": "ELCTRO",
-              "total": 123,
-              "hp": 100,
-              "attack": 123,
-              "defense": 75,
-              "spatk": 57,
-              "spdef": 75,
-              "speed": 80,
-              "generation": 5,
-              "legendary": true
-
+            "name": "PIKA PIKA",
+            "type_1": "ELECTRO",
+            "type_2": "ELCTRO",
+            "total": 123,
+            "hp": 100,
+            "attack": 123,
+            "defense": 75,
+            "spatk": 57,
+            "spdef": 75,
+            "speed": 80,
+            "generation": 5,
+            "legendary": true
           } }
       end
 
@@ -28,7 +27,6 @@ RSpec.describe 'Pokemons', type: :request do
         expect(JSON.parse(response.body)['generation']).to eq(5)
         expect(JSON.parse(response.body)['speed']).to eq(80)
       end
-
 
       it 'returns a created status' do
         expect(response).to have_http_status(:created)

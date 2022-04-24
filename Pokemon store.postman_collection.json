@@ -1,0 +1,248 @@
+{
+	"info": {
+		"_postman_id": "17c82a84-4393-4dd9-a110-1e4b30d71043",
+		"name": "Pokemon store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1  multi criteria search",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/pokemons?type_1=normal&legendary=1&hp=100&name=Braviary&defense=75&speed=80&spatk=57&spdef=75&type_2=Flying",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"pokemons"
+					],
+					"query": [
+						{
+							"key": "type_1",
+							"value": "normal"
+						},
+						{
+							"key": "legendary",
+							"value": "1"
+						},
+						{
+							"key": "hp",
+							"value": "100"
+						},
+						{
+							"key": "name",
+							"value": "Braviary"
+						},
+						{
+							"key": "defense",
+							"value": "75"
+						},
+						{
+							"key": "speed",
+							"value": "80"
+						},
+						{
+							"key": "spatk",
+							"value": "57"
+						},
+						{
+							"key": "spdef",
+							"value": "75"
+						},
+						{
+							"key": "type_2",
+							"value": "Flying"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2  multi criteria search  with pagination",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/pokemons.json?type_1=normal&legendary=1&hp=100&name=Braviary&defense=75&speed=80&spatk=57&spdef=75&type_2=Flying",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pokemons.json"
+					],
+					"query": [
+						{
+							"key": "type_1",
+							"value": "normal"
+						},
+						{
+							"key": "legendary",
+							"value": "1"
+						},
+						{
+							"key": "hp",
+							"value": "100"
+						},
+						{
+							"key": "name",
+							"value": "Braviary"
+						},
+						{
+							"key": "defense",
+							"value": "75"
+						},
+						{
+							"key": "speed",
+							"value": "80"
+						},
+						{
+							"key": "spatk",
+							"value": "57"
+						},
+						{
+							"key": "spdef",
+							"value": "75"
+						},
+						{
+							"key": "type_2",
+							"value": "Flying"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3  add new pokemon",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"name\": \"PIKA PIKA\",\r\n    \"type_1\": \"ELECTRO\",\r\n    \"type_2\": \"ELCTRO\",\r\n    \"total\": 123,\r\n    \"hp\": 100,\r\n    \"attack\": 123,\r\n    \"defense\": 75,\r\n    \"spatk\": 57,\r\n    \"spdef\": 75,\r\n    \"speed\": 80,\r\n    \"generation\": 5,\r\n    \"legendary\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/pokemons.json",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pokemons.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4  delete pokemon",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"name\": \"Rails Pokemon\",\r\n    \"type_1\": \"Normal\",\r\n    \"type_2\": \"WaterProof\",\r\n    \"total\": 123,\r\n    \"hp\": 100,\r\n    \"attack\": 123,\r\n    \"defense\": 75,\r\n    \"spatk\": 57,\r\n    \"spdef\": 75,\r\n    \"speed\": 80,\r\n    \"generation\": 5,\r\n    \"legendary\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/pokemons/700.json",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pokemons",
+						"700.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5  update pokemon",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"name\": \"Updated Name\",\r\n    \"type_1\": \"Normalupdated\",\r\n    \"type_2\": \"WaterProof\",\r\n    \"total\": 123,\r\n    \"hp\": 100,\r\n    \"attack\": 123,\r\n    \"defense\": 75,\r\n    \"spatk\": 57,\r\n    \"spdef\": 75,\r\n    \"speed\": 80,\r\n    \"generation\": 5,\r\n    \"legendary\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/pokemons/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"pokemons",
+						"5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
